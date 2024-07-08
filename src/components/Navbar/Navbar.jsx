@@ -9,7 +9,7 @@ export const Navbar = () => {
     <s.HeaderContainer>
       <a href="#">
         <img
-          src="https://www.homeburgerbar.com/sites/default/files/logo.png"
+          src="img/logo.png"
           alt="Logo burguer"
         />
       </a>

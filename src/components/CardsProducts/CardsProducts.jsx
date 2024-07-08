@@ -15,7 +15,7 @@ export const CardsProducts = () => {
       <ProductsContainerStyled>
         <CardsContainerStyled>
           <img
-            src="https://bk-latam-prod.s3.amazonaws.com/sites/burgerking.com.py/files/stacker%20fan%C3%A1tico%20cuadruple.png"
+            src= "img/stacker.png"
             alt="Hamburguesa de carne"
           />
           <h1>Stacker XL</h1>
@@ -26,7 +26,7 @@ export const CardsProducts = () => {
         </CardsContainerStyled>
         <CardsContainerStyled>
           <img
-            src="https://s3-eu-central-1.amazonaws.com/www.burgerking.com.ar.v2/wp-media-folder-bk-argentina//home/ubuntu/preview/menu-app/frontend/apps/marketing-website-wordpress-app/web/app/uploads/sites/5/BK_WB_POLLOCRISPYMARRON_1200X800_140922-1024x683.png"
+            src="img/pollo_crispy.png"
             alt="Hamburguesa de pollo"
           />
           <h1>Pollo crispy morrón</h1>
@@ -37,7 +37,7 @@ export const CardsProducts = () => {
         </CardsContainerStyled>
         <CardsContainerStyled>
           <img
-            src="https://canalhoreca.cl/wp-content/uploads/2023/06/Foto-Melt-stacker.png"
+            src="img/paty_melt.png"
             alt="Patty Melt"
           />
           <h1>Melt de carne doble</h1>
@@ -48,7 +48,7 @@ export const CardsProducts = () => {
         </CardsContainerStyled>
         <CardsContainerStyled>
           <img
-            src="https://s3-eu-central-1.amazonaws.com/www.burgerking.com.ar.v2/wp-media-folder-bk-argentina//home/ubuntu/preview/menu-app/frontend/apps/marketing-website-wordpress-app/web/app/uploads/sites/5/foto-menu-muzzasticks-1024x683.png"
+            src="img/muzza_sticks.png"
             alt="Muzzarella Sticks"
           />
           <h1>Muzzarella Sticks</h1>

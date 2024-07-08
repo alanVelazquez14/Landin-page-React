@@ -11,7 +11,7 @@ export const Hero = () => {
         </HeroTextContainerStyled>
 
         <HeroImgContainerStyled>
-            <img src="https://s3-eu-central-1.amazonaws.com/www.burgerking.com.ar.v2/wp-media-folder-bk-argentina/home/ubuntu/preview/menu-app/frontend/apps/marketing-website-wordpress-app/web/app/uploads/sites/5/Mozzarella-1024x1024.png" alt="Hamburguesa" />
+            <img src="img/portada_hero.png" alt="Hamburguesa" />
         </HeroImgContainerStyled>
     </HeroContainerStyled>
   )
