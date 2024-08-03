@@ -37,6 +37,8 @@ export const CardsContainerStyled = styled.div`
   max-width: 300px;
   width: calc(50% - 30px);
   box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 
   img {
     height: 200px;
@@ -44,6 +46,10 @@ export const CardsContainerStyled = styled.div`
 
   P{
     text-align: center;
+  }
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
 
   @media (max-width: 600px){
