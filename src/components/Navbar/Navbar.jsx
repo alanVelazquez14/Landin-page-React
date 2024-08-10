@@ -1,8 +1,8 @@
-import {useState} from "react";
+import { useState } from "react";
 import * as s from "./NavbarStyles";
 import { motion } from "framer-motion";
 import { FaRegUserCircle } from "react-icons/fa";
-import { FaBars,FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export const Navbar = () => {
   const [click, setClick] = useState(false);
@@ -19,7 +19,7 @@ export const Navbar = () => {
 
       <s.IconLogoMobile onClick={() => ChangeClick()}>
         <motion.div whileTap={{ scale: 0.97 }}>
-          {click ? <FaTimes/> : <FaBars/>}
+          {click ? <FaTimes /> : <FaBars />}
         </motion.div>
       </s.IconLogoMobile>
 
@@ -33,15 +33,21 @@ export const Navbar = () => {
         </s.HomeContainer>
 
         <s.LinksNav onClick={() => ChangeClick()}>
-          <s.SpanStyled>PRODUCTOS</s.SpanStyled>
+          <motion.div whileTap={{ scale: 0.97 }}>
+            <s.SpanStyled>PRODUCTOS</s.SpanStyled>
+          </motion.div>
         </s.LinksNav>
 
         <s.LinksNav onClick={() => ChangeClick()}>
-          <s.SpanStyled>NOSOTROS</s.SpanStyled>
+          <motion.div whileTap={{ scale: 0.97 }}>
+            <s.SpanStyled>NOSOTROS</s.SpanStyled>
+          </motion.div>
         </s.LinksNav>
 
         <s.LinksNav onClick={() => ChangeClick()}>
+          <motion.div whileTap={{ scale: 0.97 }}>
             <s.SpanStyled>INGRESÁ</s.SpanStyled>
+          </motion.div>
         </s.LinksNav>
       </s.LinksContainerStyled>
     </s.NavbarContainerStyled>
