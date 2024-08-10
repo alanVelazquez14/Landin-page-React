@@ -1,81 +1,61 @@
 import styled from "styled-components";
 
-export const HeaderContainer = styled.header`
+
+export const NavbarContainerStyled = styled.div`
+  width: 100%;
   height: 100px;
   background-color: #18191a;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 4rem;
-
+  padding: 15px;
   img {
     width: 100%;
+    cursor: pointer;
   }
 `;
 
-export const LinksContainer = styled.div`
+export const LinksContainerStyled = styled.div`
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
-  a {
-    padding: 1rem 1.5rem;
-  }
-  a:first-child {
-    background-color: #8c147c;
-    border-radius: 1rem;
-    display: flex;
-    justify-content: center;
+  gap: 30px;
+  font-family: "Oswald";
+
+  @media (max-width: 768px){
+    width: 100%;
+    height: 98vh;
+    position: absolute;
+    top: 100px;
+    left: ${({click}) => click ? 0 : "-100%"};
+    flex-direction: column;
     align-items: center;
-    gap: 5px;
+    justify-content: center;
+    transition: 0.5s all ease-in;
+    background-color: #18191a;
+
   }
 `;
 
-export const LinkContainer = styled.div`
-  font-size: 1.2rem;
-  color: ${(props) => (props.home ? "#ff9d01" : "ff9300")};
-`;
-
-export const UserContainer = styled(LinkContainer)`
+export const UserContainer = styled.div`
   display: flex;
   align-items: center;
 `;
 
-export const HomeContainer = styled(LinkContainer)`
+export const HomeContainer = styled.div`
   display: flex;
   align-items: center;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
+  cursor: pointer;
 `;
 
-export const ProductsNav = styled.div`
+export const LinksNav = styled.div`
   gap: 15px;
   cursor: pointer;
   span {
     color: white;
-    font-size: 1rem;
+    font-size: 1.3rem;
     margin-right: 20px;
-  }
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-`;
-
-export const UserNav = styled.div`
-  gap: 15px;
-  cursor: pointer;
-  span {
-    color: white;
-    font-size: 1rem;
-    margin-right: 20px;
-  }
-
-  @media (max-width: 768px) {
-    display: none;
   }
 `;
 
@@ -85,12 +65,12 @@ export const SpanStyled = styled.span`
   }
 `;
 
-export const MenuContainer = styled(LinkContainer)`
-  font-size: 2rem;
-  display: none;
+export const IconLogoMobile = styled.div `
+display: none;
 
-  @media (max-width: 768px) {
-    display: flex;
-    align-items: center;
-  }
-`;
+@media (max-width: 768px){
+  display: flex;
+  color: aliceblue;
+  font-size: 2rem;
+}
+`

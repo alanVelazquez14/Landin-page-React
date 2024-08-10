@@ -1,19 +1,17 @@
 import { CardsProducts } from "./components/CardsProducts/CardsProducts";
 import { Footer } from "./components/Footer/Footer";
-import { Hero } from "./components/Hero/Hero";
 import { Layout } from "./components/Layout/Layout";
 import { Navbar } from "./components/Navbar/Navbar";
+import Routes from "./routes/Routes";
 
 function App() {
   return (
-    <>
+    <Layout>
       <Navbar />
-      <Layout>
-        <Hero/>
-        <CardsProducts/>
-      </Layout>
-      <Footer/>
-    </>
+      <Routes />
+      <CardsProducts />
+      <Footer />
+    </Layout>
   );
 }
 

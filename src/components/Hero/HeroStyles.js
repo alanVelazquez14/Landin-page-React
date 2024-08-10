@@ -30,7 +30,6 @@ export const HeroTextContainerStyled = styled.div`
 
   span {
     text-decoration: underline;
-    /* font-weight: bold; */
   }
 
   p {

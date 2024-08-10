@@ -1,47 +1,51 @@
+import {useState} from "react";
 import * as s from "./NavbarStyles";
-import { FaHamburger } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { FaRegUserCircle } from "react-icons/fa";
-import { IoMenu } from "react-icons/io5";
+import { FaBars,FaTimes } from "react-icons/fa";
 
 export const Navbar = () => {
+  const [click, setClick] = useState(false);
+
+  const ChangeClick = () => {
+    setClick(!click);
+  };
+
   return (
-    <s.HeaderContainer>
-      <a href="#">
-        <img
-          src="img/logo.png"
-          alt="Logo burguer"
-        />
-      </a>
-      <s.LinksContainer>
+    <s.NavbarContainerStyled>
+      <div>
+        <img src="img/logo.png" alt="Logo"></img>
+      </div>
+
+      <s.IconLogoMobile onClick={() => ChangeClick()}>
+        <motion.div whileTap={{ scale: 0.97 }}>
+          {click ? <FaTimes/> : <FaBars/>}
+        </motion.div>
+      </s.IconLogoMobile>
+
+      <s.LinksContainerStyled click={click}>
         <s.HomeContainer>
-          <motion.div whileTap={{ scale: 0.95 }}>
-            <a href="#">
-              <s.LinkContainer>
-                <FaHamburger />
-              </s.LinkContainer>
-              Home
-            </a>
+          <motion.div whileTap={{ scale: 0.97 }}>
+            <s.LinksNav onClick={() => ChangeClick()}>
+              <s.SpanStyled>HOME</s.SpanStyled>
+            </s.LinksNav>
           </motion.div>
         </s.HomeContainer>
 
-        <s.ProductsNav>
-          <s.SpanStyled>Productos</s.SpanStyled>
-        </s.ProductsNav>
+        <s.LinksNav onClick={() => ChangeClick()}>
+          <s.SpanStyled>PRODUCTOS</s.SpanStyled>
+        </s.LinksNav>
 
-        <s.UserNav>
-          <s.UserContainer>
-            <s.SpanStyled>Inicia Sesión</s.SpanStyled>
-            <FaRegUserCircle />
-          </s.UserContainer>
-        </s.UserNav>
-        <s.MenuContainer>
-          <motion.div whileTap={{ scale: 0.95 }}>
-            <IoMenu />
-          </motion.div>
-        </s.MenuContainer>
-      </s.LinksContainer>
-    </s.HeaderContainer>
+        <s.LinksNav onClick={() => ChangeClick()}>
+          <s.SpanStyled>NOSOTROS</s.SpanStyled>
+        </s.LinksNav>
+
+        <s.LinksNav onClick={() => ChangeClick()}>
+            <s.SpanStyled>INGRESÁ</s.SpanStyled>
+        </s.LinksNav>
+      </s.LinksContainerStyled>
+    </s.NavbarContainerStyled>
   );
 };
 
+export default Navbar;
