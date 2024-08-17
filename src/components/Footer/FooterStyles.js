@@ -2,14 +2,13 @@ import styled from "styled-components";
 
 export const FooterContainerStyled = styled.section`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-direction: column;
-  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
   padding: 20px;
   background-color: #1f2021;
   margin-top: 200px;
-
 `;
 
 export const FooterTextContainerStyled = styled.div`

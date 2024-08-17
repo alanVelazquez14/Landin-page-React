@@ -8,7 +8,7 @@ function App() {
   return (
     <Layout>
       <Navbar />
-      <Routes />
+      <Routes/>
       <CardsProducts />
       <Footer />
     </Layout>

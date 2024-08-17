@@ -1,7 +1,6 @@
 import { useState } from "react";
 import * as s from "./NavbarStyles";
 import { motion } from "framer-motion";
-import { FaRegUserCircle } from "react-icons/fa";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 export const Navbar = () => {
@@ -14,7 +13,7 @@ export const Navbar = () => {
   return (
     <s.NavbarContainerStyled>
       <div>
-        <img src="img/logo.png" alt="Logo"></img>
+          <img src="img/logo.png" alt="Logo"></img>
       </div>
 
       <s.IconLogoMobile onClick={() => ChangeClick()}>
