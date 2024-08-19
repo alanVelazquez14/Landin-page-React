@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 
@@ -10,59 +9,48 @@ export const NavbarContainerStyled = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 15px;
+  
   img {
-    width: 100%;
+    width: 100px;
     cursor: pointer;
   }
 `;
 
 export const LinksContainerStyled = styled.div`
-  color: white;
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 30px;
-  font-family: "Oswald";
+  font-size: 25px;
 
-  @media (max-width: 768px){
+  @media (max-width: 768px) {
     width: 100%;
     height: 98vh;
     position: absolute;
     top: 100px;
-    left: ${({click}) => click ? 0 : "-100%"};
+    left: ${({ click }) => (click ? 0 : "-100%")};
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     transition: 0.5s all ease-in;
     background-color: #18191a;
-
   }
 `;
 
-export const UserContainer = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-export const HomeContainer = styled.div`
-  display: flex;
-  align-items: center;
+export const LinkStyled = styled.div`
+  color: white;
+  font-family: "Oswald";
   cursor: pointer;
+  &:hover {
+    color: #666464;
+  }
 `;
-
 export const LinksNav = styled.div`
+display: flex;
   gap: 15px;
   cursor: pointer;
   span {
     color: white;
     font-size: 1.3rem;
     margin-right: 20px;
-  }
-`;
-
-export const SpanStyled = styled.span`
-  &:hover {
-    text-decoration: underline;
   }
 `;
 

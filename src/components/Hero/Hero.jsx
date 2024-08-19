@@ -1,18 +1,33 @@
-import { Button } from "../UI/Button/Button"
-import { HeroContainerStyled, HeroImgContainerStyled, HeroTextContainerStyled } from "./HeroStyles"
+import { CardsProducts } from "../CardsProducts/CardsProducts";
+import { Button } from "../UI/Button/Button";
+import {
+  HeroContainerStyled,
+  HeroImgContainerStyled,
+  HeroTextContainerStyled,
+} from "./HeroStyles";
 
 export const Hero = () => {
   return (
-    <HeroContainerStyled>
+    <>
+      <HeroContainerStyled>
         <HeroTextContainerStyled>
-            <h1>Hamburguesas gourmet estilo casero, <span>pensadas para vos.</span></h1>
-            <p>Las hamburguesas son elaboradas artesanalmente, seleccionando el mejor blend, que acompañadas con nuestro pan recién horneado, ingredientes naturales y aderezos gourmet; brindan una combinación de sabor única!</p>
-            <Button radius={'15'}>Ver más</Button>
+          <h1>
+            Hamburguesas gourmet estilo casero, <span>pensadas para vos.</span>
+          </h1>
+          <p>
+            Las hamburguesas son elaboradas artesanalmente, seleccionando el
+            mejor blend, que acompañadas con nuestro pan recién horneado,
+            ingredientes naturales y aderezos gourmet; brindan una combinación
+            de sabor única!
+          </p>
+          <Button radius={"15"}>Ver más</Button>
         </HeroTextContainerStyled>
 
         <HeroImgContainerStyled>
-            <img src="img/portada_hero.png" alt="Hamburguesa" />
+          <img src="img/portada_hero.png" alt="Hamburguesa" />
         </HeroImgContainerStyled>
-    </HeroContainerStyled>
-  )
-}
+      </HeroContainerStyled>
+      <CardsProducts />
+    </>
+  );
+};
