@@ -12,7 +12,7 @@ export const Hero = () => {
       <HeroContainerStyled>
         <HeroTextContainerStyled>
           <h1>
-            Hamburguesas gourmet estilo casero, <span>pensadas para vos.</span>
+            Hamburguesas estilo casero, <span>pensadas para vos.</span>
           </h1>
           <p>
             Las hamburguesas son elaboradas artesanalmente, seleccionando el

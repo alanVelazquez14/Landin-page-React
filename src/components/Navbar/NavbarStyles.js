@@ -6,7 +6,7 @@ export const NavbarContainerStyled = styled.div`
   height: 100px;
   background-color: #18191a;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 15px;
   
@@ -19,7 +19,7 @@ export const NavbarContainerStyled = styled.div`
 export const LinksContainerStyled = styled.div`
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 60px;
   font-size: 25px;
 
   @media (max-width: 768px) {
