@@ -11,7 +11,7 @@ const Nosotros = () => {
       <AboutUsContainerStyled>
         <div>
           <h1>CONOCÉ NUESTRA HISTORIA</h1>
-          <img src="img/nosotros-home-burger.jpg" />
+          <img src="img/Productos/nosotros-home-burger.jpg" />
           <p>
             En 2006 abrió sus puertas <span>Home Burger Bar</span>. Con aquel
             primer local queríamos demostrar que una hamburguesa sana y de

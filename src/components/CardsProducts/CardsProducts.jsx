@@ -10,7 +10,7 @@ export const CardsProducts = () => {
   return (
     <TextProductsContainerStyled>
       <h2>
-        Nuestros productos destacados <FaStar />
+        Recomendaciones <FaStar />
       </h2>
       <ProductsContainerStyled>
         <CardsContainerStyled>

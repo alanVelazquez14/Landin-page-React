@@ -1,4 +1,3 @@
-import { CardsProducts } from "../CardsProducts/CardsProducts";
 import { Button } from "../UI/Button/Button";
 import {
   HeroContainerStyled,
@@ -6,7 +5,8 @@ import {
   HeroTextContainerStyled,
 } from "./HeroStyles";
 
-export const Hero = () => {
+
+const Hero = () => {
   return (
     <>
       <HeroContainerStyled>
@@ -24,10 +24,11 @@ export const Hero = () => {
         </HeroTextContainerStyled>
 
         <HeroImgContainerStyled>
-          <img src="img/portada_hero.png" alt="Hamburguesa" />
+          <img src="img/Productos/portada_hero.png" alt="Hamburguesa" />
         </HeroImgContainerStyled>
       </HeroContainerStyled>
-      <CardsProducts />
     </>
   );
 };
+
+export default Hero;

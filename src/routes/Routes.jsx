@@ -1,13 +1,14 @@
 import React from "react";
 import {
   BrowserRouter,
+  Navigate,
   Routes as ReactDomRoutes,
   Route,
 } from "react-router-dom";
-import  {Hero}  from "../components/Hero/Hero";
-import  Products  from "../pages/Products/Products.jsx";
-import  Nosotros  from "../pages/Nosotros/Nosotros.jsx";
-import Login from '/src/pages/Login/Login.jsx';
+import Products from "../pages/Products/Products.jsx";
+import Nosotros from "../pages/Nosotros/Nosotros.jsx";
+import Home from "../pages/Home/Home.jsx";
+import Login from "/src/pages/Login/Login.jsx";
 import Navbar from "../components/Navbar/Navbar";
 
 function Routes() {
@@ -15,7 +16,8 @@ function Routes() {
     <BrowserRouter>
       <Navbar />
       <ReactDomRoutes>
-        <Route path="/home" element={<Hero />} />
+        <Route path="/" element={<Navigate to="/home" replace />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/nosotros" element={<Nosotros />} />
         <Route path="/login" element={<Login />} />

@@ -6,6 +6,7 @@ export const HeroContainerStyled = styled.section`
   align-items: center;
   max-width: 1300px;
   gap: 30px;
+  margin-bottom: 50px;
 
   h1 {
     margin-bottom: 2rem;
@@ -52,5 +53,45 @@ export const HeroImgContainerStyled = styled.div`
 
   @media (max-width: 1000px) {
     display: none;
+  }
+`;
+
+export const RecomendadosSectionStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-size: 40px;
+  }
+`;
+
+export const CardContainer = styled.div`
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  overflow-x: scroll;
+  width: 1500px;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 15px;
+  padding: 10px;
+  gap: 10px;
+  &::-webkit-scrollbar {
+    height: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #252525;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #242424;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
   }
 `;
