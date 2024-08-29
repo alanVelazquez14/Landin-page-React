@@ -33,7 +33,7 @@ export const Navbar = () => {
   return (
     <s.NavbarContainerStyled>
       <div>
-        <img src="img/logo.png" alt="Logo"></img>
+        <img src="img/Productos/logo.png" alt="Logo"></img>
       </div>
 
       

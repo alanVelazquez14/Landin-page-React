@@ -12,8 +12,12 @@ export const NosotrosContainerStyled = styled.section`
     font-size: 50px;
   }
 
-  p{
-    font-size: 30px;
+  p {
+    font-size: 20px;
+  }
+
+  span {
+    font-size: 20px;
   }
 `;
 
@@ -22,10 +26,26 @@ export const LinkNosotrosStyled = styled.a`
   text-decoration-color: white;
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
-  color: inherit; 
+  color: inherit;
 
   &:hover {
     text-decoration-color: violet;
-    color: violet; 
+    color: violet;
+  }
+`;
+
+export const TextContainerStyled = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  margin-bottom: 15px;
+  gap: 35px;
+
+  p {
+    width: 33%;
+  }
+
+  span {
+    color: violet;
   }
 `;

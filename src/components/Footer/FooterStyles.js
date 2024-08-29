@@ -9,6 +9,7 @@ export const FooterContainerStyled = styled.section`
   padding: 20px;
   background-color: #1f2021;
   margin-top: 200px;
+  font-family: "Oswald";
 `;
 
 export const FooterTextContainerStyled = styled.div`
@@ -29,7 +30,7 @@ export const FooterTitleContainerStyled = styled.div`
   display: flex;
   flex-direction: column;
 
-  h2{
+  h2 {
     font-size: 2rem;
   }
 `;

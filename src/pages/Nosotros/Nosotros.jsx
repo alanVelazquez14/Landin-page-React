@@ -2,6 +2,7 @@ import React from "react";
 import {
   AboutUsContainerStyled,
   AboutUsInfoStyled,
+  ImgContainer,
   VerticalDivider,
 } from "./NosotrosStyled.js";
 
@@ -11,7 +12,18 @@ const Nosotros = () => {
       <AboutUsContainerStyled>
         <div>
           <h1>CONOCÉ NUESTRA HISTORIA</h1>
+          <h2>- Breve Reseña Histórica -</h2>
+          <p>
+            Louis LASSEN, inmigrante alemán, crea en 1895 la primera hamburguesa
+            en EE.UU. En aquel entonces, la inmigración europea partía del
+            puerto de Hamburgo, y Nueva York era uno de los principales
+            destinos. La receta de la hamburguesa como la conocemos se gestó en
+            Alemania, más precisamente en Hamburgo. En Estados Unidos se hizo
+            tan popular que llegó a ser la comida nacional y un emblema. La
+            hamburguesa lleva ya más de un siglo junto a los estadounidenses.
+          </p>
           <img src="img/Productos/nosotros-home-burger.jpg" />
+          <h2>- Conocé HOME BURGUER BAR -</h2>
           <p>
             En 2006 abrió sus puertas <span>Home Burger Bar</span>. Con aquel
             primer local queríamos demostrar que una hamburguesa sana y de
@@ -59,6 +71,18 @@ const Nosotros = () => {
               </div>
             </div>
           </AboutUsInfoStyled>
+        </div>
+        <ImgContainer>
+          <img src="img/Productos/nosotros.jpeg" alt="Sobre nosotros" />
+          <img src="img/Productos/nosotros2.jpg" alt="Sobre nosotros" />
+          <img src="img/Productos/nosotros3.webp" alt="Sobre nosotros" />
+        </ImgContainer>
+        <div>
+          <h2>
+            Si queres formar parte del equipo de <span>Home Burguer Bar</span>
+          </h2>
+          <p>mandanos tu curriculum vitae a: </p>
+          <a href="#">homeburguerbar@gmail.com</a>
         </div>
       </AboutUsContainerStyled>
     </>

@@ -16,7 +16,7 @@ export const Footer = () => {
           <p>En 2006 abrió sus puertas el primer Home Burger Bar.</p>
         </FooterTitleContainerStyled>
         <FooterInfoContainerStyled>
-          <a href="#">Nuestra carta</a>
+          <a href="/products">Nuestra carta</a>
           <a href="#">Restaurantes</a>
           <a href="#">Política de Privacidad</a>
           <a href="#">Cookies</a>

@@ -22,15 +22,39 @@ export const AboutUsContainerStyled = styled.section`
   span {
     color: #f05d5d;
   }
+  a {
+    &:hover {
+      color: #f05d5d;
+    }
+  }
 `;
 
 export const AboutUsInfoStyled = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 35px;
   justify-content: space-between;
+  p {
+    width: 100%;
+  }
 `;
 export const VerticalDivider = styled.div`
   border-left: 1px solid white;
   height: 200px;
   margin: 0 50px;
+`;
+
+export const ImgContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  img {
+    width: 450px;
+    height: 350px;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 `;
