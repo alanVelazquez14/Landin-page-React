@@ -10,7 +10,7 @@ const Links = [
     href: "/home",
   },
   {
-    name: "Produtos",
+    name: "Productos",
     href: "/products",
   },
   {

@@ -1,6 +1,5 @@
 import React from "react";
 import { Button, ButtonContainer, Card } from "./CardsRecomendadosStyled";
-import Products from "../../pages/Products/Products";
 import { Link } from "react-router-dom";
 
 const CardsRecomendacion = ({ nombre, precio, descripcion, img }) => {
