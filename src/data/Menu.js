@@ -1,4 +1,4 @@
-export const burger = [
+export const burgers = [
   {
     id: 1,
     nombre: "KING KONG BURGER",
@@ -152,7 +152,7 @@ export const burger = [
     descripcion:
       "Con dados de carne, salsa barbacoa, huevos estrellados, ají molido y verdeo.",
     categoria: "acompañamientos",
-    img: "/img/Productos/burgervegana.jpg",
+    img: "/img/Productos/papagonicas.jpeg",
   },
   {
     id: 19,
@@ -281,3 +281,14 @@ export const burger = [
     img: "/img/Productos/chessecake.jpg",
   },
 ];
+
+export const TotalProductos = burgers.length;
+
+export const Products = burgers.reduce((acc, burger) => {
+  if (!acc[burger.categoria]) {
+    acc[burger.categoria] = [];
+  }
+  acc[burger.categoria] = [...acc[burger.categoria], burger];
+
+  return acc;
+}, {});

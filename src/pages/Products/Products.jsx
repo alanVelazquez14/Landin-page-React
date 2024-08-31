@@ -3,14 +3,17 @@ import {
   CategoriasContainer,
   ProductsContainerStyled,
   TitleProductsStyled,
-  ProductsContainer
+  ProductsContainer,
 } from "./ProductsStyled";
 import Categorias from "../../components/Categorias/Categorias";
-import { categorys } from "../../data/Categories";
 import Menu from "../../components/Menu/Menu";
-import { burger } from "../../data/Menu";
+import { burgers } from "../../data/Menu";
+import { useSelector } from "react-redux";
 
 const Products = () => {
+  const { categories } = useSelector((state) => state.categories);
+  
+
   return (
     <>
       <ProductsContainerStyled>
@@ -19,13 +22,13 @@ const Products = () => {
           <h1>MENÚ</h1>
         </TitleProductsStyled>
         <CategoriasContainer>
-          {categorys.map((category) => (
+          {categories.map((category) => (
             <Categorias key={category.id} {...category} />
           ))}
         </CategoriasContainer>
 
         <ProductsContainer>
-          {burger.map((burger) => (
+          {burgers.map((burger) => (
             <Menu key={burger.id} {...burger} />
           ))}
         </ProductsContainer>
