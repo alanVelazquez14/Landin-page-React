@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect } from "react";
 
 const Login = () => {
-  return (
-    <div>Login</div>
-  )
-}
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  return <div>Login</div>;
+};
 
-export default Login
+export default Login;

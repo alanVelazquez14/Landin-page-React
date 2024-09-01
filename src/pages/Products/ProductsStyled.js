@@ -27,11 +27,23 @@ export const CategoriasContainer = styled.div`
 `;
 
 export const ProductsContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 1200px;
-    gap: 12px;
-    flex-wrap: wrap;
-    box-sizing: border-box;
-`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  gap: 12px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+`;
+
+export const ContainerButtonStyled = styled.div`
+  display: flex;
+  margin-top: 25px;
+  gap: 15px;
+
+  button {
+    font-size: 15px;
+    width: 120px;
+    height: 50px;
+  }
+`;

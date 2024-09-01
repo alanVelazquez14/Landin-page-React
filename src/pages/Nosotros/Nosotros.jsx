@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   AboutUsContainerStyled,
   AboutUsInfoStyled,
@@ -7,6 +7,9 @@ import {
 } from "./NosotrosStyled.js";
 
 const Nosotros = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <AboutUsContainerStyled>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Hero from "../../components/Hero/Hero";
 import { HomeContainerStyled } from "./HomeStyled";
 import {
@@ -11,6 +11,9 @@ import NosotrosResumen from "../../components/ResumenNosotros/NosotrosResumen";
 import { useSelector } from "react-redux";
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const { recommended } = useSelector((state) => state.recommended);
 
   return (

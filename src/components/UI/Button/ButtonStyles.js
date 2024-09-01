@@ -9,6 +9,7 @@ export const Button = styled(motion.button)`
   background-color: violet;
   color: white;
   text-transform: uppercase;
+  font-family: "Oswald";
   cursor: pointer;
   &:hover {
     opacity: 95%;
