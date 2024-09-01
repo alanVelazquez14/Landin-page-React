@@ -11,29 +11,34 @@ import { burgers } from "../../data/Menu";
 import { useSelector } from "react-redux";
 
 const Products = () => {
-  const { categories } = useSelector((state) => state.categories);
-  
+  const { categories, selectedCategory } = useSelector(
+    (state) => state.categories
+  );
+
+  const filteredBurgers = selectedCategory
+    ? burgers.filter((burgers) => burgers.categoria === selectedCategory)
+    : burgers;
 
   return (
-    <>
-      <ProductsContainerStyled>
-        <TitleProductsStyled>
-          <h2>- CONOCÉ NUESTRO -</h2>
-          <h1>MENÚ</h1>
-        </TitleProductsStyled>
-        <CategoriasContainer>
-          {categories.map((category) => (
-            <Categorias key={category.id} {...category} />
-          ))}
-        </CategoriasContainer>
+    <ProductsContainerStyled>
+      <TitleProductsStyled>
+        <h2>- CONOCÉ NUESTRO -</h2>
+        <h1>MENÚ</h1>
+      </TitleProductsStyled>
 
+      <CategoriasContainer>
+        {categories.map((category) => (
+          <Categorias key={category.id} {...category} />
+        ))}
+      </CategoriasContainer>
+      {filteredBurgers.length > 0 && (
         <ProductsContainer>
-          {burgers.map((burger) => (
+          {filteredBurgers.map((burger) => (
             <Menu key={burger.id} {...burger} />
           ))}
         </ProductsContainer>
-      </ProductsContainerStyled>
-    </>
+      )}
+    </ProductsContainerStyled>
   );
 };
 
