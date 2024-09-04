@@ -1,8 +1,12 @@
 import React from "react";
 import { Button, ButtonContainer, Card } from "./CardsRecomendadosStyled";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/cartSlice/cartSlice";
+import { toast } from "sonner";
 
-const CardsRecomendacion = ({ nombre, precio, descripcion, img }) => {
+const CardsRecomendacion = ({ nombre, precio, descripcion, img, id }) => {
+  const dispatch = useDispatch();
   return (
     <>
       <Card>
@@ -15,7 +19,15 @@ const CardsRecomendacion = ({ nombre, precio, descripcion, img }) => {
           </div>
         </div>
         <ButtonContainer>
-          <Button>Agregar</Button>
+          <Button
+            onClick={() =>
+              {dispatch(addToCart({ nombre, precio, descripcion, img, id }))
+            toast.success("Producto agregado")
+            }
+            }
+          >
+            Agregar
+          </Button>
           <Link to="/products">
             <Button>Ver Más</Button>
           </Link>

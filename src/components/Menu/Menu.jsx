@@ -1,7 +1,15 @@
 import React from "react";
-import { ContainerP, PrecioStyled, ProductosContainerStyled } from "./MenuStyled";
+import {
+  ContainerP,
+  PrecioStyled,
+  ProductosContainerStyled,
+} from "./MenuStyled";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/cartSlice/cartSlice";
+import { toast } from "sonner";
 
-const Productos = ({ id, nombre, precio, descripcion, categorias, img }) => {
+const Productos = ({ nombre, precio, descripcion, img, id }) => {
+  const dispatch = useDispatch();
   return (
     <ProductosContainerStyled>
       <img src={img} alt={nombre} />
@@ -11,7 +19,13 @@ const Productos = ({ id, nombre, precio, descripcion, categorias, img }) => {
       </ContainerP>
       <PrecioStyled>
         <span>$ {precio}</span>
-        <button>Agregar</button>
+        <button
+          onClick={() => {dispatch(addToCart({ nombre, precio, descripcion, img, id }))
+          toast.success("Producto agregado")
+        }}
+        >
+          Agregar
+        </button>
       </PrecioStyled>
     </ProductosContainerStyled>
   );

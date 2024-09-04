@@ -1,19 +1,35 @@
-import styled from "styled-components";
-
+import { motion } from "framer-motion";
+import styled, { css } from "styled-components";
 
 export const NavbarContainerStyled = styled.div`
-  width: 110%;
+  width: 100%;
+  max-width: 1850px;
   height: 100px;
   background-color: #18191a;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  padding: 15px;
-  
+  padding: 25px;
+
   img {
     width: 100px;
     cursor: pointer;
   }
+`;
+
+export const ModalOverlayStyled = styled(motion.div)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: calc(100vw - 450px);
+  height: 100vh;
+
+  ${({ isHidden }) =>
+    !isHidden &&
+    css`
+      backdrop-filter: blur(4px);
+    `}
 `;
 
 export const LinksContainerStyled = styled.div`
@@ -44,7 +60,7 @@ export const LinkStyled = styled.div`
   }
 `;
 export const LinksNav = styled.div`
-display: flex;
+  display: flex;
   gap: 15px;
   cursor: pointer;
   span {
@@ -54,12 +70,34 @@ display: flex;
   }
 `;
 
-export const IconLogoMobile = styled.div `
-display: none;
+export const IconLogoMobile = styled.div`
+  display: none;
 
-@media (max-width: 768px){
-  display: flex;
-  color: aliceblue;
-  font-size: 2rem;
-}
-`
+  @media (max-width: 768px) {
+    display: flex;
+    color: aliceblue;
+    font-size: 2rem;
+  }
+`;
+
+export const CartStyled = styled.div`
+  cursor: pointer;
+`;
+
+export const CartNavStyled = styled.div`
+  position: relative;
+  cursor: pointer;
+
+  span {
+    position: absolute;
+    top: 0px;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    border-radius: 1rem;
+    border: 1px solid white;
+    color: white;
+    background-color: red;
+    font-size: 0.9rem;
+  }
+`;
