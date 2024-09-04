@@ -90,14 +90,15 @@ export const CartNavStyled = styled.div`
 
   span {
     position: absolute;
-    top: 0px;
+    top: -10px;
+    right: -15px;
     height: 20px;
     width: 20px;
     text-align: center;
     border-radius: 1rem;
     border: 1px solid white;
-    color: white;
-    background-color: red;
-    font-size: 0.9rem;
+    color: black;
+    background-color: violet;
+    font-size: 15px;
   }
 `;

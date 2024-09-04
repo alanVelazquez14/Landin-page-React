@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addItemToCart, removeItemFromCart } from "./cartUtils";
+import { addItemToCart, removeItemFromCart, resetShippingCost } from "./cartUtils";
 
 const INITIAL_STATE = {
   cartItems: [],
@@ -22,7 +22,7 @@ const cartSlice = createSlice({
       return {
         ...state,
         cartItems: removeItemFromCart(state.cartItems, action.payload),
-        shippingCost: 0,
+        shippingCost: resetShippingCost(state.cartItems, 500),
       };
     },
     clearCart: (state) => {

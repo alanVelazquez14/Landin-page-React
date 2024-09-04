@@ -13,9 +13,9 @@ export const ContainerStyled = styled(motion.div)`
   gap: 30px;
   width: 450px;
   height: calc(100vh - 4rem);
-  padding: 2rem;
+  padding: 30px;
   background-color: #18191a;
-  border-radius: 0 0 0 1rem;
+  border-radius: 0 0 0 8px;
   box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.3);
 `;
 
@@ -27,8 +27,8 @@ export const CloseButtonStyled = styled(motion.button)`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 2rem;
-  height: 2rem;
+  width: 35px;
+  height: 35px;
   outline: none;
   border: none;
   border-radius: 10px;
@@ -43,9 +43,8 @@ export const MainContainerStyled = styled.div`
 
 export const TitleStyled = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  margin: 0;
 `;
 
 export const ProductsWrapperStyled = styled.div`
@@ -99,14 +98,45 @@ export const TextContainerStyled = styled.div`
 `;
 
 export const CardTitleStyled = styled.div`
-  margin: 0;
   margin-bottom: 2px;
 `;
 
 export const DescStyled = styled.div`
-  font-size: 14px;
+  font-size: 10px;
 `;
 
 export const PriceStyled = styled.div`
   font-size: 14px;
+`;
+
+export const QuantityContainerStyled = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const InfoPrecioContainerStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  font-size: 20px;
+
+  span {
+    border: 1px solid white;
+  }
+`;
+
+export const SubtotalContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+export const EnvioContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+export const TotalContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  div{
+    color: violet;
+  }
 `;

@@ -20,13 +20,3 @@ export const CartIcon = () => {
     </LinksContainerStyled>
   );
 };
-
-{
-  /* <ProductsWrapperStyled>
-  {cartItems.length ? (
-    cartItems.map((item) => <ModalCartCard key={item.id} {...item} />)
-  ) : (
-    <p>No seas amarrete, compra algo</p>
-  )}
-</ProductsWrapperStyled>; */
-}

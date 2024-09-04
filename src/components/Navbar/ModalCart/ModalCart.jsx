@@ -1,19 +1,24 @@
 import React from "react";
-import { toggleHiddenCart } from "../../../redux/cartSlice/cartSlice";
+import { clearCart, toggleHiddenCart } from "../../../redux/cartSlice/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { AnimatePresence } from "framer-motion";
 import {
   CloseButtonContainerStyled,
   CloseButtonStyled,
   ContainerStyled,
+  EnvioContainer,
+  InfoPrecioContainerStyled,
   MainContainerStyled,
   ProductsWrapperStyled,
+  SubtotalContainer,
   TitleStyled,
+  TotalContainer,
 } from "./ModalCartStyled";
 import { MdOutlineClose } from "react-icons/md";
 import { ModalOverlayStyled } from "../NavbarStyles";
 import ModalCartCard from "./ModalCartCard";
-// import {ModalCartCard} from "./ModalCartCard"
+import Increase from "../../UI/Increase/Increase";
+import { IoMdTrash } from "react-icons/io";
 
 const ModalCart = () => {
   const { cartItems, shippingCost, hidden } = useSelector(
@@ -22,7 +27,7 @@ const ModalCart = () => {
   const dispatch = useDispatch();
 
   const totalPrice = cartItems.reduce((acc, item) => {
-    return (acc += item.price * item.quantity);
+    return (acc += item.precio * item.quantity);
   }, 0);
 
   return (
@@ -35,7 +40,6 @@ const ModalCart = () => {
         />
       )}
       <AnimatePresence>
-
         {!hidden && (
           <ContainerStyled
             initial={{ translateX: 600 }}
@@ -45,11 +49,7 @@ const ModalCart = () => {
             key="cart-modal"
           >
             <CloseButtonContainerStyled>
-              <CloseButtonStyled
-                className="close__modal "
-                whileTap={{ scale: 0.95 }}
-                onClick={() => dispatch(toggleHiddenCart())}
-              >
+              <CloseButtonStyled onClick={() => dispatch(toggleHiddenCart())}>
                 <MdOutlineClose size="24px" />
               </CloseButtonStyled>
             </CloseButtonContainerStyled>
@@ -57,6 +57,13 @@ const ModalCart = () => {
             <MainContainerStyled>
               <TitleStyled>
                 <h1>Tus Productos</h1>
+                <Increase
+                  onClick={() => dispatch(clearCart())}
+                  bgColor="#f05d5d"
+                  disabled={!cartItems.length}
+                >
+                  <IoMdTrash />
+                </Increase>
               </TitleStyled>
 
               <ProductsWrapperStyled>
@@ -68,8 +75,23 @@ const ModalCart = () => {
                   <p>CARRITO VACÍO</p>
                 )}
               </ProductsWrapperStyled>
-
             </MainContainerStyled>
+
+            <InfoPrecioContainerStyled>
+              <div>
+                <SubtotalContainer>
+                  Subtotal: <div>${(totalPrice).toFixed(2)}</div>
+                </SubtotalContainer>
+                <EnvioContainer>
+                  Envio: <div>${shippingCost}</div>
+                </EnvioContainer>
+              </div>
+              <span></span>
+              <TotalContainer>
+                Total: <div>${(totalPrice + shippingCost).toFixed(2)}</div>
+              </TotalContainer>
+            </InfoPrecioContainerStyled>
+            <button>Iniciar Pedido</button>
           </ContainerStyled>
         )}
       </AnimatePresence>
