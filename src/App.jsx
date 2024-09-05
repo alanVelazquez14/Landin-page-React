@@ -6,8 +6,8 @@ import Routes from "./routes/Routes";
 function App() {
   return (
     <Layout>
-      <Toaster richColors  />
-      <Routes/>
+      <Toaster richColors closeButton />
+      <Routes />
       <Footer />
     </Layout>
   );
