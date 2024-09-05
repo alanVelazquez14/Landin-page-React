@@ -1,10 +1,10 @@
+import { Link } from "react-router-dom";
 import { Button } from "../UI/Button/Button";
 import {
   HeroContainerStyled,
   HeroImgContainerStyled,
   HeroTextContainerStyled,
 } from "./HeroStyles";
-
 
 const Hero = () => {
   return (
@@ -20,7 +20,11 @@ const Hero = () => {
             ingredientes naturales y aderezos gourmet; brindan una combinación
             de sabor única!
           </p>
-          <Button radius={"15"}>Ver más</Button>
+          <Link to="/products">
+            <Button radius={"15"} >
+              Ver más
+            </Button>
+          </Link>
         </HeroTextContainerStyled>
 
         <HeroImgContainerStyled>

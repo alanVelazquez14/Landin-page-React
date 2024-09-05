@@ -2,7 +2,7 @@ export const burgers = [
   {
     id: 1,
     nombre: "KING KONG BURGER",
-    precio: 25550.00,
+    precio: 25550.0,
     descripcion:
       "Para compartir, impresionante burger XXL de 1kg, queso cheddar fundido y panceta crocante.",
     categoria: "hamburguesas",
@@ -13,7 +13,7 @@ export const burgers = [
     nombre: "DOUBLE CHEESE & BACON",
     precio: 8990.99,
     descripcion:
-      "Doble burger de carne 200gr. Doble queso cheddar fundido. Doble panceta crocante. Cebolla caramelizada.",
+      "Doble burger de carne 200gr. Doble queso cheddar fundido. Doble panceta crocante.",
     categoria: "hamburguesas",
     img: "/img/Productos/Hamburguesa_Crispy.webp",
   },

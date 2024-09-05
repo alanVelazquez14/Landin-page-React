@@ -1,5 +1,11 @@
 import React from "react";
-import { Button, ButtonContainer, Card } from "./CardsRecomendadosStyled";
+import {
+  Button,
+  ButtonContainer,
+  Card,
+  ContainerCardStyled,
+  ContainerInfoStyled,
+} from "./CardsRecomendadosStyled";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartSlice/cartSlice";
@@ -10,21 +16,20 @@ const CardsRecomendacion = ({ nombre, precio, descripcion, img, id }) => {
   return (
     <>
       <Card>
-        <img src={img} alt={nombre} />
-        <div>
-          <h2>{nombre}</h2>
-          <div>
+        <ContainerCardStyled>
+          <img src={img} alt={nombre} />
+          <ContainerInfoStyled>
+            <h2>{nombre}</h2>
             <p>{descripcion}</p>
             <span>$ {precio}</span>
-          </div>
-        </div>
+          </ContainerInfoStyled>
+        </ContainerCardStyled>
         <ButtonContainer>
           <Button
-            onClick={() =>
-              {dispatch(addToCart({ nombre, precio, descripcion, img, id }))
-            toast.success("Producto agregado")
-            }
-            }
+            onClick={() => {
+              dispatch(addToCart({ nombre, precio, descripcion, img, id }));
+              toast.success("Producto agregado");
+            }}
           >
             Agregar
           </Button>

@@ -21,6 +21,10 @@ const Links = [
     href: "/nosotros",
   },
   {
+    name: "Contáctanos",
+    href: "/contactanos",
+  },
+  {
     name: "Ingresá",
     href: "/login",
   },

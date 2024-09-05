@@ -14,7 +14,7 @@ export const Card = styled.section`
   height: 150px;
 
   img {
-    width: 150px;
+    width: 100px;
     height: 100px;
     border-radius: 8px;
   }
@@ -22,11 +22,13 @@ export const Card = styled.section`
   h2 {
     font-size: 20px;
     text-align: start;
+    margin-top: -8px;
   }
 
   p {
     text-align: start;
     font-size: 12px;
+    margin-top: -5px;
   }
 
   span {
@@ -35,6 +37,15 @@ export const Card = styled.section`
   }
 `;
 
+export const ContainerCardStyled = styled.div`
+  display: flex;
+  gap: 15px;
+`;
+
+export const ContainerInfoStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 export const ButtonContainer = styled.div`
   display: flex;
@@ -43,13 +54,13 @@ export const ButtonContainer = styled.div`
 `;
 
 export const Button = styled.button`
-  padding: 10px 15px;
+  padding: 7px 13px;
   outline: none;
   border: none;
   border-radius: 15px;
   background-color: violet;
   color: white;
-  font-size: 15px;
+  font-size: 13px;
   font-family: "Oswald";
   cursor: pointer;
   &:hover {
