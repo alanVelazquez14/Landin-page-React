@@ -102,3 +102,15 @@ export const CartNavStyled = styled.div`
     font-size: 15px;
   }
 `;
+
+export const UserLinkStyled = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  font-size: 25px;
+  font-family: "Oswald";
+
+  &:hover {
+    opacity: 90%;
+  }
+`;

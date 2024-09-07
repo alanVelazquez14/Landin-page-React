@@ -1,8 +1,12 @@
 import React from "react";
-import { clearCart, toggleHiddenCart } from "../../../redux/cartSlice/cartSlice";
+import {
+  clearCart,
+  toggleHiddenCart,
+} from "../../../redux/cartSlice/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { AnimatePresence } from "framer-motion";
 import {
+  ButtonStyled,
   CloseButtonContainerStyled,
   CloseButtonStyled,
   ContainerStyled,
@@ -19,12 +23,14 @@ import { ModalOverlayStyled } from "../NavbarStyles";
 import ModalCartCard from "./ModalCartCard";
 import Increase from "../../UI/Increase/Increase";
 import { IoMdTrash } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 const ModalCart = () => {
   const { cartItems, shippingCost, hidden } = useSelector(
     (state) => state.cart
   );
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const totalPrice = cartItems.reduce((acc, item) => {
     return (acc += item.precio * item.quantity);
@@ -80,7 +86,7 @@ const ModalCart = () => {
             <InfoPrecioContainerStyled>
               <div>
                 <SubtotalContainer>
-                  Subtotal: <div>${(totalPrice).toFixed(2)}</div>
+                  Subtotal: <div>${totalPrice.toFixed(2)}</div>
                 </SubtotalContainer>
                 <EnvioContainer>
                   Envio: <div>${shippingCost}</div>
@@ -91,7 +97,15 @@ const ModalCart = () => {
                 Total: <div>${(totalPrice + shippingCost).toFixed(2)}</div>
               </TotalContainer>
             </InfoPrecioContainerStyled>
-            <button>Iniciar Pedido</button>
+
+            <ButtonStyled
+              onClick={() => {
+                navigate("/checkout");
+                dispatch(toggleHiddenCart());
+              }}
+            >
+              Iniciar pedido
+            </ButtonStyled>
           </ContainerStyled>
         )}
       </AnimatePresence>

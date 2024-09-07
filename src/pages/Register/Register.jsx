@@ -1,30 +1,37 @@
 import React, { useEffect } from "react";
 import {
   ButtonContainer,
-  ErrorLoginMessageStyled,
-  InputLoginStyled,
-  LabelLoginStyled,
-  LoginContainerStyled,
+  ErrorRegisterMessageStyled,
+  InputRegisterStyled,
+  LabelRegisterStyled,
+  RegisterContainerStyled,
   PStyled,
   TitleStyled,
-} from "./LoginStyled";
-import { Formik, Form, Field } from "formik";
+} from "./RegisterStyled";
+import { Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
-import { loginUser } from "../../axios/axios-user";
+import { createUser } from "../../axios/axios-user";
 import { useDispatch } from "react-redux";
 import { setCurrentUser } from "../../redux/userSlice/userSlice";
 import useRedirect from "../../hooks/useRedirect";
 
-const Login = () => {
+const Register = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   const dispatch = useDispatch();
   useRedirect("/");
 
   const Inputs = [
+    {
+      label: "Nombre",
+      type: "text",
+      name: "name",
+      placeholder: "Nombre",
+    },
     {
       label: "Email",
       type: "email",
@@ -40,6 +47,7 @@ const Login = () => {
   ];
 
   const validationSchema = Yup.object({
+    name: Yup.string().required("Campo requerido"),
     email: Yup.string()
       .email("Correo electrónico inválido")
       .required("Campo requerido"),
@@ -50,60 +58,61 @@ const Login = () => {
 
   return (
     <>
-      <TitleStyled>- INICIA SESIÓN -</TitleStyled>
+      <TitleStyled>- CREÁ TU CUENTA -</TitleStyled>
       <Formik
         initialValues={{
+          name: "",
           email: "",
           password: "",
         }}
         validationSchema={validationSchema}
-        onSubmit={async (values) => {
-          const user = await loginUser(values.email, values.password);
+        onSubmit={async (values, actions) => {
+          const user = await createUser(
+            values.name,
+            values.email,
+            values.password
+          );
 
+          actions.resetForm();
           if (user) {
-            dispatch(
-              setCurrentUser({
-                ...user.usuario,
-                token: user.token,
-              })
-            );
-            toast.success("Ingresaste correctamente");
+            toast.success("Te registraste correctamente");
+            dispatch(setCurrentUser({ ...user.usuario }));
           }
         }}
       >
         {({ errors, touched }) => (
-          <LoginContainerStyled>
+          <RegisterContainerStyled>
             <Form>
               {Inputs.map((input, index) => (
-                <InputLoginStyled key={index}>
-                  <LabelLoginStyled>{input.label}</LabelLoginStyled>
+                <InputRegisterStyled key={index}>
+                  <LabelRegisterStyled>{input.label}</LabelRegisterStyled>
                   <Field
                     type={input.type}
                     name={input.name}
                     placeholder={input.placeholder}
                   />
                   {touched[input.name] && errors[input.name] && (
-                    <ErrorLoginMessageStyled>
+                    <ErrorRegisterMessageStyled>
                       {errors[input.name]}
-                    </ErrorLoginMessageStyled>
+                    </ErrorRegisterMessageStyled>
                   )}
-                </InputLoginStyled>
-              ))}
+                </InputRegisterStyled>
+              ))}{" "}
               <PStyled>
-                ¿No tenes cuenta?
-                <Link to="/register">
-                  <span> Registrate!</span>
+                ¿Ya tenes cuenta?
+                <Link to="/login">
+                  <span> Inicia sesión!</span>
                 </Link>
               </PStyled>
               <ButtonContainer>
-                <button type="submit">Ingresa</button>
+                <button type="submit">Registrarse</button>
               </ButtonContainer>
             </Form>
-          </LoginContainerStyled>
+          </RegisterContainerStyled>
         )}
       </Formik>
     </>
   );
 };
 
-export default Login;
+export default Register;
