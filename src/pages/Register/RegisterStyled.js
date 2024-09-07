@@ -2,9 +2,10 @@ import styled from "styled-components";
 
 export const TitleStyled = styled.div`
   color: #f05d5d;
-  font-family: "Oswald";
-  font-size: 40px;
   margin-top: 25px;
+  h1 {
+    font-family: "Oswald";
+  }
 `;
 
 export const RegisterContainerStyled = styled.section`

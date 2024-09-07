@@ -58,7 +58,9 @@ const Register = () => {
 
   return (
     <>
-      <TitleStyled>- CREÁ TU CUENTA -</TitleStyled>
+      <TitleStyled>
+        <h1>- CREÁ TU CUENTA -</h1>
+      </TitleStyled>
       <Formik
         initialValues={{
           name: "",

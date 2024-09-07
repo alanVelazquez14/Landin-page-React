@@ -50,7 +50,9 @@ const Login = () => {
 
   return (
     <>
-      <TitleStyled>- INICIA SESIÓN -</TitleStyled>
+      <TitleStyled>
+        <h1>- INICIA SESIÓN -</h1>
+      </TitleStyled>
       <Formik
         initialValues={{
           email: "",
