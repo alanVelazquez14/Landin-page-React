@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import {
+  ButtonContainer,
   CheckoutContainerStyled,
   ContainerCheckout,
+  ContainerForm,
+  ContainerStyled,
   ErrorCheckoutMessageStyled,
   InputCheckoutStyled,
-  LabelCheckoutStyled,
-  TitleStyled,
 } from "./CheckoutFormStyled";
 import { Field, Form, Formik } from "formik";
 import * as Yup from "yup";
@@ -15,33 +16,6 @@ const CheckoutForm = ({ cartItems }) => {
     window.scrollTo(0, 0);
   }, []);
 
-  const Inputs = [
-    {
-      label: "Nombre",
-      type: "text",
-      id: "name",
-      placeholder: "Nombre",
-    },
-    {
-      label: "Teléfono",
-      type: "text",
-      id: "celular",
-      placeholder: "Tu celular",
-    },
-    {
-      label: "Ubicación",
-      type: "text",
-      id: "ubicacion",
-      placeholder: "Ubicación",
-    },
-    {
-      label: "Dirección",
-      type: "text",
-      id: "direcion",
-      placeholder: "Dirección",
-    },
-  ];
-
   const validationSchema = Yup.object({
     name: Yup.string().required("Campo requerido"),
     celular: Yup.string().required("Campo requerido"),
@@ -50,48 +24,86 @@ const CheckoutForm = ({ cartItems }) => {
   });
 
   return (
-    <ContainerCheckout>
-      <Formik
-        initialValues={{
-          name: "",
-          celular: "",
-          ubicacion: "",
-          direccion: "",
-        }}
-        validationSchema={validationSchema}
-        onSubmit={(values, { resetForm }) => {
-          console.log(values);
-          toast.success("Te registraste correctamente");
-          resetForm();
-        }}
-      >
-        {({ errors, touched }) => (
-          <CheckoutContainerStyled>
-            <Form>
-              <TitleStyled>Tu pedido</TitleStyled>
-              {Inputs.map((input, index) => (
-                <InputCheckoutStyled key={index}>
-                  <LabelCheckoutStyled>{input.label}</LabelCheckoutStyled>
-                  <Field
-                    type={input.type}
-                    name={input.name}
-                    placeholder={input.placeholder}
-                  />
-                  {touched[input.name] && errors[input.name] && (
-                    <ErrorCheckoutMessageStyled>
-                      {errors[input.name]}
-                    </ErrorCheckoutMessageStyled>
-                  )}
-                </InputCheckoutStyled>
-              ))}
-              <div>
-                <button disabled={!cartItems.length}>Iniciar Pedido</button>
-              </div>
-            </Form>
-          </CheckoutContainerStyled>
-        )}
-      </Formik>
-    </ContainerCheckout>
+    <ContainerStyled>
+    <h1>Ingresá tus datos</h1>
+      <ContainerCheckout>
+        <Formik
+          initialValues={{
+            name: "",
+            celular: "",
+            ubicacion: "",
+            direccion: "",
+          }}
+          validationSchema={validationSchema}
+          onSubmit={(values, { resetForm }) => {
+            console.log(values);
+            resetForm();
+          }}
+        >
+          {({ errors, touched }) => (
+            <CheckoutContainerStyled>
+              <Form>
+                <ContainerForm>
+                  <div>
+                    <InputCheckoutStyled>
+                      <Field type="text" name="name" placeholder="Nombre" />
+                      {touched.name && errors.name && (
+                        <ErrorCheckoutMessageStyled>
+                          {errors.name}
+                        </ErrorCheckoutMessageStyled>
+                      )}
+                    </InputCheckoutStyled>
+
+                    <InputCheckoutStyled>
+                      <Field
+                        type="text"
+                        name="celular"
+                        placeholder="Celular"
+                      />
+                      {touched.celular && errors.celular && (
+                        <ErrorCheckoutMessageStyled>
+                          {errors.celular}
+                        </ErrorCheckoutMessageStyled>
+                      )}
+                    </InputCheckoutStyled>
+                  </div>
+                  <div>
+                    <InputCheckoutStyled>
+                      <Field
+                        type="text"
+                        name="ubicacion"
+                        placeholder="Ubicación"
+                      />
+                      {touched.ubicacion && errors.ubicacion && (
+                        <ErrorCheckoutMessageStyled>
+                          {errors.ubicacion}
+                        </ErrorCheckoutMessageStyled>
+                      )}
+                    </InputCheckoutStyled>
+
+                    <InputCheckoutStyled>
+                      <Field
+                        type="text"
+                        name="direccion"
+                        placeholder="Dirección"
+                      />
+                      {touched.direccion && errors.direccion && (
+                        <ErrorCheckoutMessageStyled>
+                          {errors.direccion}
+                        </ErrorCheckoutMessageStyled>
+                      )}
+                    </InputCheckoutStyled>
+                  </div>
+                </ContainerForm>
+                <ButtonContainer>
+                  <button disabled={!cartItems.length}>Confirmar pedido</button>
+                </ButtonContainer>
+              </Form>
+            </CheckoutContainerStyled>
+          )}
+        </Formik>
+      </ContainerCheckout>
+    </ContainerStyled>
   );
 };
 

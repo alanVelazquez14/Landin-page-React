@@ -28,7 +28,7 @@ const ModalCartCard = ({ img, nombre, descripcion, precio, quantity, id }) => {
         </TextContainerStyled>
         <QuantityContainerStyled>
           <Increase
-            bgColor="violet"
+            bgColor="red"
             onClick={() => dispatch(removeFromCart(id))}
           >
             {quantity === 1 ? <IoMdTrash /> : <FaMinus />}
