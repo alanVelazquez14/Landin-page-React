@@ -2,7 +2,6 @@ import { AnimatePresence } from "framer-motion";
 
 import {
   HrStyled,
-  LinkStyled,
   ModalContainerStyled,
   ModalOverlayStyled,
   UsernameStyled,
@@ -46,7 +45,14 @@ const ModalUser = () => {
           >
             <UsernameStyled>{`${currentUser?.nombre}`}</UsernameStyled>
             <HrStyled />
-            <LinkStyled to="/mis-ordenes">Mis Ordenes</LinkStyled>
+            <a
+              onClick={() => {
+                dispatch(toggleMenuHidden());
+                navigate("/mis-ordenes");
+              }}
+            >
+              Mis Ordenes
+            </a>
             <span onClick={handleLogout}>Cerrar Sesión</span>
           </ModalContainerStyled>
         </>

@@ -4,7 +4,6 @@ import {
   toggleHiddenCart,
 } from "../../../redux/cartSlice/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { AnimatePresence } from "framer-motion";
 import {
   ButtonStyled,
   CloseButtonContainerStyled,
@@ -45,7 +44,6 @@ const ModalCart = () => {
           isHidden={hidden}
         />
       )}
-      <AnimatePresence>
         {!hidden && (
           <ContainerStyled
             initial={{ translateX: 600 }}
@@ -100,15 +98,14 @@ const ModalCart = () => {
 
             <ButtonStyled
               onClick={() => {
-                navigate("/checkout");
                 dispatch(toggleHiddenCart());
+                navigate("/checkout");
               }}
             >
               Iniciar pedido
             </ButtonStyled>
           </ContainerStyled>
         )}
-      </AnimatePresence>
     </>
   );
 };

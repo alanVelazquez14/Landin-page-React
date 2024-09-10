@@ -10,11 +10,19 @@ import {
 } from "./CheckoutFormStyled";
 import { Field, Form, Formik } from "formik";
 import * as Yup from "yup";
+import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
+import { createOrder } from "../../../axios/axios-orders";
+import { useDispatch, useSelector } from "react-redux";
+import { clearCart } from "../../../redux/cartSlice/cartSlice";
 
-const CheckoutForm = ({ cartItems }) => {
+const CheckoutForm = ({ cartItems, price, shippingCost }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { currentUser } = useSelector((state) => state.user);
 
   const validationSchema = Yup.object({
     name: Yup.string().required("Campo requerido"),
@@ -25,7 +33,7 @@ const CheckoutForm = ({ cartItems }) => {
 
   return (
     <ContainerStyled>
-    <h1>Ingresá tus datos</h1>
+      <h1>Ingresá tus datos</h1>
       <ContainerCheckout>
         <Formik
           initialValues={{
@@ -35,9 +43,22 @@ const CheckoutForm = ({ cartItems }) => {
             direccion: "",
           }}
           validationSchema={validationSchema}
-          onSubmit={(values, { resetForm }) => {
-            console.log(values);
-            resetForm();
+          onSubmit={async (values) => {
+            const orderData = {
+              items: cartItems,
+              price,
+              shippingCost,
+              total: price + shippingCost,
+              shippingDetails: { ...values },
+            };
+            try {
+              await createOrder(orderData, dispatch, currentUser);
+              navigate("/felicitaciones");
+              dispatch(clearCart());
+            } catch (error) {
+              console.log(error);
+              toast.error("Error al crear la order");
+            }
           }}
         >
           {({ errors, touched }) => (
@@ -55,11 +76,7 @@ const CheckoutForm = ({ cartItems }) => {
                     </InputCheckoutStyled>
 
                     <InputCheckoutStyled>
-                      <Field
-                        type="text"
-                        name="celular"
-                        placeholder="Celular"
-                      />
+                      <Field type="text" name="celular" placeholder="Celular" />
                       {touched.celular && errors.celular && (
                         <ErrorCheckoutMessageStyled>
                           {errors.celular}
@@ -96,7 +113,9 @@ const CheckoutForm = ({ cartItems }) => {
                   </div>
                 </ContainerForm>
                 <ButtonContainer>
-                  <button disabled={!cartItems.length}>Confirmar pedido</button>
+                  <button type="submit" disabled={!cartItems.length}>
+                    Confirmar pedido
+                  </button>
                 </ButtonContainer>
               </Form>
             </CheckoutContainerStyled>

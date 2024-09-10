@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
 export const ModalContainerStyled = styled(motion.div)`
   position: absolute;
@@ -12,14 +11,19 @@ export const ModalContainerStyled = styled(motion.div)`
   z-index: 98;
   border-radius: 8px 0 0 8px;
   padding: 25px;
-
+  a {
+    cursor: pointer;
+    &:hover {
+      opacity: 50%;
+    }
+  }
   & span {
     display: flex;
     margin-top: 10px;
     cursor: pointer;
 
     &:hover {
-      opacity: 90%;
+      opacity: 50%;
     }
   }
 `;
@@ -33,12 +37,6 @@ export const ModalOverlayStyled = styled(motion.div)`
   z-index: 97;
 `;
 
-export const LinkStyled = styled(Link)`
-  &:hover {
-    opacity: 90%;
-  }
-`;
-
 export const UsernameStyled = styled.h2`
   font-weight: 400;
 `;
@@ -46,4 +44,3 @@ export const UsernameStyled = styled.h2`
 export const HrStyled = styled.hr`
   margin: 2rem 0;
 `;
-

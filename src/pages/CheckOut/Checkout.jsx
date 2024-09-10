@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { CheckoutContainerStyled } from "./CheckoutStyled";
 import CheckoutForm from "../../components/Checkout/Form/CheckoutForm";
 import ProductCheckout from "../../components/Checkout/Product/ProductCheckout";
 import { useSelector } from "react-redux";
 
 const Checkout = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const { cartItems, shippingCost } = useSelector((state) => state.cart);
 
   const price = cartItems.reduce((acc, item) => {
