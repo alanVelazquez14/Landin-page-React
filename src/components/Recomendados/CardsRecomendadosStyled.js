@@ -49,6 +49,14 @@ export const ContainerCardStyled = styled.div`
   display: flex;
   gap: 15px;
 
+  @media (max-width: 400px) {
+    h2 {
+      font-size: 15px;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
 `;
 
 export const ContainerInfoStyled = styled.div`
@@ -67,7 +75,6 @@ export const ButtonContainer = styled.div`
     justify-content: center;
     flex-direction: row;
     margin-top: auto;
-
   }
 `;
 

@@ -5,6 +5,12 @@ export const HomeContainerStyled = styled.section`
   flex-direction: column;
   max-width: 1200px;
   font-family: "Oswald";
+
+  @media (max-width: 400px) {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const RecomendadosSectionStyled = styled.div`
@@ -30,6 +36,14 @@ export const RecomendadosSectionStyled = styled.div`
       font-size: 30px;
     }
     margin-top: -105px;
+  }
+  @media (max-width: 400px) {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    h1{
+      font-size: 19px;
+    }
   }
 `;
 
@@ -63,13 +77,18 @@ export const CardContainer = styled.div`
 
   @media (max-width: 1550px) {
     justify-content: center;
-    flex-direction: row; 
+    flex-direction: row;
     flex-wrap: wrap;
     overflow-x: hidden;
     overflow-y: auto;
     width: 100%;
     padding: 20px;
     gap: 20px;
-    box-sizing: border-box; 
+    box-sizing: border-box;
+  }
+  @media (max-width: 400px) {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
   }
 `;

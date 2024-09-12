@@ -27,6 +27,22 @@ export const NosotrosContainerStyled = styled.section`
     margin-top: -20px;
     padding: 30px;
   }
+  @media (max-width: 400px) {
+    justify-content: center;
+    align-items: center;
+    h1{
+      font-size: 19px;
+    }
+    p{
+      font-size: 15px;
+    }
+    div{
+      margin-top: 12px;
+    }
+    span{
+      font-size: 15px;
+    }
+  }
 `;
 
 export const LinkNosotrosStyled = styled.a`
