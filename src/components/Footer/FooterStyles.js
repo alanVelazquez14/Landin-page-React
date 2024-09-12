@@ -10,6 +10,11 @@ export const FooterContainerStyled = styled.section`
   background-color: #1f2021;
   margin-top: 200px;
   font-family: "Oswald";
+
+  @media (max-width: 400px) {
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const FooterTextContainerStyled = styled.div`

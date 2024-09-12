@@ -18,6 +18,13 @@ export const NavbarContainerStyled = styled.div`
   @media (max-width: 450px) {
     width: 100%;
   }
+
+  @media (max-width: 390px) {
+    width: 90vw;
+    img {
+      width: 70px;
+    }
+  }
 `;
 
 export const ModalOverlayStyled = styled(motion.div)`
@@ -52,6 +59,12 @@ export const LinksContainerStyled = styled.div`
     transition: 0.5s all ease-in;
     background-color: #18191a;
   }
+
+  @media (max-width: 390px) {
+    width: 100%;
+    height: 95vh;
+    gap: 30px;
+  }
 `;
 
 export const LinkStyled = styled.div`
@@ -61,7 +74,12 @@ export const LinkStyled = styled.div`
   &:hover {
     color: #666464;
   }
+
+  @media (max-width: 390px) {
+    font-size: 15px;
+  }
 `;
+
 export const LinksNav = styled.div`
   display: flex;
   gap: 15px;
@@ -80,6 +98,10 @@ export const IconLogoMobile = styled.div`
     display: flex;
     color: aliceblue;
     font-size: 2rem;
+  }
+
+  @media (max-width: 390px) {
+    font-size: 20px;
   }
 `;
 
@@ -112,6 +134,20 @@ export const CartNavStyled = styled.div`
       right: 75px;
     }
   }
+  @media (max-width: 390px) {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      top: 36px;
+      right: 40px;
+      font-size: 13px;
+      height: 18px;
+      width: 18px;
+    }
+  }
 `;
 
 export const UserLinkStyled = styled(motion.div)`
@@ -128,4 +164,11 @@ export const UserLinkStyled = styled(motion.div)`
 export const IconContainer = styled.div`
   display: flex;
   gap: 40px;
+
+  @media (max-width: 390px) {
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
 `;

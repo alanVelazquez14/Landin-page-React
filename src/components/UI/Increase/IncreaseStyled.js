@@ -18,4 +18,11 @@ export const IncreaseStyled = styled(motion.button)`
     opacity: 0.5;
     cursor: not-allowed;
   }
+
+
+  @media (max-width: 390px) {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+  }
 `;

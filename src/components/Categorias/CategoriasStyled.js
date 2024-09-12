@@ -29,4 +29,50 @@ export const CategoryContainerStyled = styled.div`
   &:hover {
     transform: scale(1.1);
   }
+
+  @media (max-width: 1130px) {
+    width: 150px;
+    height: 100px;
+    h4 {
+      font-size: 10px;
+    }
+    img {
+      width: 40px;
+    }
+  }
+
+  @media (max-width: 875px) {
+    width: 120px;
+    height: 80px;
+    img {
+      width: 30px;
+    }
+  }
+
+  @media (max-width: 725px) {
+    width: 100px;
+    height: 70px;
+
+    h4 {
+      font-size: 9px;
+    }
+
+    img {
+      width: 25px;
+    }
+  }
+
+  @media (max-width: 620px) {
+    h4 {
+      font-size: 8px;
+    }
+
+    img {
+      width: 25px;
+    }
+  }
+
+  @media (max-width: 620px) {
+    
+  }
 `;
