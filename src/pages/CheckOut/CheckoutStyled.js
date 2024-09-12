@@ -13,5 +13,25 @@ export const CheckoutContainerStyled = styled.section`
     font-size: 40px;
     margin-top: 0;
   }
+
+
+  @media (max-width: 1450px) {
+    h1{
+      font-size: 25px;
+      margin-top: 15px;
+    }
+    
+  }
+
+  @media (max-width: 1235px) {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  @media (max-width: 570px) {
+    h1{
+      font-size: 15px;
+    }
+  }
 `;
 

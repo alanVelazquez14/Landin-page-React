@@ -19,6 +19,20 @@ export const FelicitacionesContainerStyled = styled.div`
   p {
     font-size: 20px;
   }
+
+  @media (max-width: 400px) {
+    h1 {
+      font-size: 20px;
+    }
+
+    img {
+      width: 150px;
+    }
+
+    p {
+      font-size: 15px;
+    }
+  }
 `;
 
 export const ButtonStyled = styled.button`
@@ -42,5 +56,9 @@ export const ButtonStyled = styled.button`
   &:disabled {
     cursor: not-allowed;
     opacity: 0.5;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 10px;
   }
 `;

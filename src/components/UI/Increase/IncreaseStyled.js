@@ -19,6 +19,10 @@ export const IncreaseStyled = styled(motion.button)`
     cursor: not-allowed;
   }
 
+  @media (max-width: 570px) {
+    width: 20px;
+    height: 20px;
+  }
 
   @media (max-width: 390px) {
     display: flex;

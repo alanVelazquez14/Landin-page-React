@@ -38,6 +38,16 @@ export const CardsContainer = styled.div`
   span {
     color: #f05d5d;
   }
+
+  @media (max-width: 570px) {
+    width: 350px;
+    min-width: 400px;
+  }
+
+  @media (max-width: 440px) {
+    width: 300px;
+    min-width: 350px;
+  }
 `;
 
 export const PrecioContainerStyled = styled.div`
@@ -47,6 +57,19 @@ export const PrecioContainerStyled = styled.div`
   width: 500px;
   span {
     border: 1px solid white;
+  }
+
+  @media (max-width: 1450px) {
+   p{
+    font-size: 15px;
+   }
+  }
+
+  @media (max-width: 570px) {
+    width: 350px;
+    p{
+      font-size: 10px;
+    }
   }
 `;
 

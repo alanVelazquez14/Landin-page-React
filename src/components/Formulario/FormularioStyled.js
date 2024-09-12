@@ -25,6 +25,14 @@ export const FormContainerStyled = styled.section`
       opacity: 0.5;
     }
   }
+
+  @media (max-width: 1200px) {
+    width: 50%;
+  }
+  @media (max-width: 400px) {
+    width: 60%;
+    margin-top: 5px;
+  }
 `;
 
 export const InputStyled = styled.div`
@@ -45,6 +53,23 @@ export const InputStyled = styled.div`
     &[type="number"]::-webkit-inner-spin-button {
       -webkit-appearance: none;
       margin: 0;
+    }
+  }
+
+  @media (max-width: 590px) {
+    input {
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: 465px) {
+    input {
+      font-size: 10px;
+    }
+  }
+  @media (max-width: 400px) {
+    input {
+      font-size: 8px;
     }
   }
 `;

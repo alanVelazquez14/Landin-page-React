@@ -148,6 +148,23 @@ export const CartNavStyled = styled.div`
       width: 18px;
     }
   }
+
+  @media (max-width: 386px) {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      top: 36px;
+      right: 75px;
+      font-size: 13px;
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+
 `;
 
 export const UserLinkStyled = styled(motion.div)`

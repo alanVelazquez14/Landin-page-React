@@ -6,6 +6,12 @@ export const TitleStyled = styled.div`
   h1 {
     font-family: "Oswald";
   }
+
+  @media (max-width: 490px) {
+    h1{
+      font-size: 25px;
+    }
+  }
 `;
 
 export const RegisterContainerStyled = styled.section`
@@ -13,6 +19,14 @@ export const RegisterContainerStyled = styled.section`
   flex-direction: column;
   font-family: "Oswald";
   width: 25%;
+
+  @media (max-width: 950px) {
+    width: 50%;
+  }
+
+  @media (max-width: 570px) {
+    width: 70%;
+  }
 `;
 
 export const InputRegisterStyled = styled.div`
@@ -33,6 +47,12 @@ export const InputRegisterStyled = styled.div`
     &[type="number"]::-webkit-inner-spin-button {
       -webkit-appearance: none;
       margin: 0;
+    }
+  }
+
+  @media (max-width: 490px) {
+    input{
+      font-size: 15px;
     }
   }
 `;
@@ -86,5 +106,9 @@ export const PStyled = styled.div`
   span {
     color: #f05d5d;
     cursor: pointer;
+  }
+
+  @media (max-width: 490px) {
+    font-size: 15px;
   }
 `;

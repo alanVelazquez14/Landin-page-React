@@ -44,7 +44,6 @@ const Nosotros = () => {
           <AboutUsInfoStyled>
             <div style={{ display: "flex", alignItems: "center" }}>
               <div>
-                {" "}
                 <h2>FILOSOFÍA</h2>
                 <p>
                   Nuestro nombre refleja de forma clara y fiel la clase de
@@ -59,7 +58,6 @@ const Nosotros = () => {
               </div>
               <VerticalDivider />
               <div>
-                {" "}
                 <h2>PRODUCTOS E INGREDIENTES</h2>
                 <p>
                   Nos distinguimos por el uso de ingredientes de calidad y por

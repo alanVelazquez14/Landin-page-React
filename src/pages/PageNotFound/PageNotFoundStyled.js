@@ -7,15 +7,34 @@ export const NotFoundContainerStyled = styled.section`
   align-items: center;
   font-family: "Oswald";
 
-  h1{
+  h1 {
     font-size: 55px;
   }
 
-  p{
+  p {
     font-size: 25px;
   }
-`;
 
+  @media (max-width: 780px) {
+    h1 {
+      font-size: 30px;
+    }
+
+    p {
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: 450px) {
+    h1 {
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 10px;
+    }
+  }
+`;
 
 export const Button = styled.button`
   padding: 10px 15px;
@@ -34,4 +53,10 @@ export const Button = styled.button`
     cursor: not-allowed;
     opacity: 0.5;
   }
+
+  @media (max-width: 780px) {
+    font-size: 15px;
+    margin-top: 50px;
+  }
+
 `;

@@ -23,6 +23,10 @@ export const ContainerStyled = styled(motion.div)`
     width: 350px;
     height: 97vh;
   }
+
+  @media (max-width: 355px) {
+    width: 80%;
+  }
 `;
 
 export const CloseButtonContainerStyled = styled.div`
@@ -119,7 +123,10 @@ export const ProductContainerStyled = styled.div`
       width: 150px;
       height: 80px;
     }
+  }
 
+  @media (max-width: 355px) {
+    width: 80%;
   }
 `;
 

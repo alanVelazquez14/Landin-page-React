@@ -6,7 +6,6 @@ export const ContainerCheckout = styled.div`
   justify-content: center;
   align-items: center;
   font-family: "Oswald";
-
 `;
 
 export const CheckoutContainerStyled = styled.section`
@@ -32,6 +31,22 @@ export const InputCheckoutStyled = styled.div`
     &[type="number"]::-webkit-outer-spin-button,
     &[type="number"]::-webkit-inner-spin-button {
       -webkit-appearance: none;
+    }
+  }
+
+  @media (max-width: 1450px) {
+    input {
+      font-size: 15px;
+    }
+  }
+  
+  @media (max-width: 1235px) {
+    margin-top: 20px;
+  }
+
+  @media (max-width: 570px) {
+    input{
+      font-size: 10px;
     }
   }
 `;
@@ -67,18 +82,43 @@ export const ButtonContainer = styled.div`
       opacity: 0.5;
     }
   }
+
+  @media (max-width: 1450px) {
+    button {
+      font-size: 10px;
+    }
+  }
+
+  @media (max-width: 1235px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width: 570px) {
+    button{
+      font-size: 8px;
+    }
+  }
 `;
 
 export const ContainerForm = styled.div`
   display: flex;
   align-items: center;
   gap: 150px;
-`;
 
+  @media (max-width: 570px) {
+    gap: 25px;
+  }
+
+  @media (max-width: 570px) {
+    gap: 10px;
+  }
+
+`;
 
 export const ContainerStyled = styled.div`
   display: flex;
   flex-direction: column;
   padding: 15px;
 `;
-
