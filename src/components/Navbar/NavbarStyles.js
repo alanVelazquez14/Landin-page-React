@@ -2,18 +2,21 @@ import { motion } from "framer-motion";
 import styled, { css } from "styled-components";
 
 export const NavbarContainerStyled = styled.div`
-  width: 100%;
-  max-width: 1850px;
+  width: 95vw;
   height: 100px;
   background-color: #18191a;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px;
+  padding: 10px 50px;
 
   img {
     width: 100px;
     cursor: pointer;
+  }
+
+  @media (max-width: 450px) {
+    width: 100%;
   }
 `;
 
@@ -38,7 +41,7 @@ export const LinksContainerStyled = styled.div`
   gap: 60px;
   font-size: 25px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     width: 100%;
     height: 98vh;
     position: absolute;
@@ -73,7 +76,7 @@ export const LinksNav = styled.div`
 export const IconLogoMobile = styled.div`
   display: none;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     display: flex;
     color: aliceblue;
     font-size: 2rem;
@@ -85,13 +88,13 @@ export const CartStyled = styled.div`
 `;
 
 export const CartNavStyled = styled.div`
-  position: relative;
   cursor: pointer;
+  font-size: 25px;
 
   span {
     position: absolute;
-    top: -10px;
-    right: -15px;
+    top: 35px;
+    right: 70px;
     height: 20px;
     width: 20px;
     text-align: center;
@@ -101,16 +104,28 @@ export const CartNavStyled = styled.div`
     background-color: violet;
     font-size: 15px;
   }
+
+  @media (max-width: 1000px) {
+    font-size: 25px;
+    span {
+      top: 35px;
+      right: 75px;
+    }
+  }
 `;
 
 export const UserLinkStyled = styled(motion.div)`
   display: flex;
   align-items: center;
-  gap: 60px;
   font-size: 25px;
   font-family: "Oswald";
 
   &:hover {
     opacity: 90%;
   }
+`;
+
+export const IconContainer = styled.div`
+  display: flex;
+  gap: 40px;
 `;

@@ -35,11 +35,20 @@ export const Card = styled.section`
     font-weight: bold;
     color: white;
   }
+
+  @media (max-width: 1550px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 190px;
+    flex: 0 0 300px;
+  }
 `;
 
 export const ContainerCardStyled = styled.div`
   display: flex;
   gap: 15px;
+
 `;
 
 export const ContainerInfoStyled = styled.div`
@@ -51,6 +60,15 @@ export const ButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 5px;
+
+  @media (max-width: 1550px) {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: auto;
+
+  }
 `;
 
 export const Button = styled.button`

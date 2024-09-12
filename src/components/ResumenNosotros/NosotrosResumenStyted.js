@@ -19,6 +19,14 @@ export const NosotrosContainerStyled = styled.section`
   span {
     font-size: 20px;
   }
+
+  @media (max-width: 1000px) {
+    h1 {
+      font-size: 30px;
+    }
+    margin-top: -20px;
+    padding: 30px;
+  }
 `;
 
 export const LinkNosotrosStyled = styled.a`
@@ -32,6 +40,7 @@ export const LinkNosotrosStyled = styled.a`
     text-decoration-color: violet;
     color: violet;
   }
+
 `;
 
 export const TextContainerStyled = styled.div`
@@ -47,5 +56,17 @@ export const TextContainerStyled = styled.div`
 
   span {
     color: violet;
+  }
+
+  @media (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    p {
+      width: 70%;
+    }
   }
 `;

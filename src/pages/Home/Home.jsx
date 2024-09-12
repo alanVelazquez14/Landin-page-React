@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import Hero from "../../components/Hero/Hero";
-import { HomeContainerStyled } from "./HomeStyled";
 import {
-  CardContainer,
+  HomeContainerStyled,
   RecomendadosSectionStyled,
-} from "../../components/Hero/HeroStyles";
+  CardContainer,
+} from "./HomeStyled";
+
 import { FaStar } from "react-icons/fa";
 import CardsRecomendacion from "../../components/Recomendados/CardsRecomendacion";
 import NosotrosResumen from "../../components/ResumenNosotros/NosotrosResumen";

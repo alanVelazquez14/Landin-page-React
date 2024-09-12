@@ -12,8 +12,16 @@ export const HeroContainerStyled = styled.section`
     margin-bottom: 2rem;
   }
 
+  @media (max-width: 1250px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   @media (max-width: 1000px) {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
@@ -37,10 +45,72 @@ export const HeroTextContainerStyled = styled.div`
     font-size: 1.2rem;
   }
 
-  @media (max-width: 1000px) {
-    width: 80%;
+  @media (max-width: 1250px) {
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     text-align: center;
+    margin-top: 25px;
+    min-width: 900px;
+  }
+
+  @media (max-width: 1000px) {
+    min-width: 700px;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  @media (max-width: 750px) {
+    min-width: 500px;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+
+    h1 {
+      font-size: 35px;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 610px) {
+    h1 {
+      font-size: 25px;
+    }
+    p {
+      font-size: 15px;
+    }
+
+    @media (max-width: 610px) {
+      h1 {
+        font-size: 20px;
+      }
+      p {
+        max-width: 300px;
+      }
+      button {
+        font-size: 10px;
+        margin-top: 50px;
+      }
+    }
+    @media (max-width: 450px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      h1 {
+        font-size: 18px;
+      }
+      p {
+        max-width: 300px;
+      }
+      button {
+        font-size: 10px;
+        margin-top: 50px;
+      }
+  }
   }
 `;
 
@@ -52,46 +122,18 @@ export const HeroImgContainerStyled = styled.div`
   }
 
   @media (max-width: 1000px) {
-    display: none;
+    width: 300px;
   }
-`;
-
-export const RecomendadosSectionStyled = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  h1 {
-    font-size: 40px;
+  @media (max-width: 750px) {
+    margin-bottom: -80px;
   }
-`;
-
-export const CardContainer = styled.div`
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  overflow-x: scroll;
-  width: 1500px;
-  scroll-snap-type: x mandatory;
-  scroll-padding: 0 15px;
-  padding: 10px;
-  gap: 10px;
-  &::-webkit-scrollbar {
-    height: 10px;
+  @media (max-width: 610px) {
+    width: 200px;
+    margin-top: -30px;
   }
 
-  &::-webkit-scrollbar-track {
-    background: #252525;
-    border-radius: 10px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: #242424;
-    border-radius: 10px;
-  }
-
-  &::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
+  @media (max-width: 450px) {
+    width: 150px;
+    margin-top: -30px;
   }
 `;

@@ -1,5 +1,4 @@
 import React from "react";
-import { LinksContainerStyled } from "../NavbarStyles";
 import { FaShoppingCart } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleHiddenCart } from "../../../redux/cartSlice/cartSlice";
@@ -14,9 +13,9 @@ export const CartIcon = () => {
   const dispatch = useDispatch();
 
   return (
-    <LinksContainerStyled onClick={() => dispatch(toggleHiddenCart())}>
+    <div onClick={() => dispatch(toggleHiddenCart())}>
       <FaShoppingCart />
       <span>{totalCartItems}</span>
-    </LinksContainerStyled>
+    </div>
   );
 };

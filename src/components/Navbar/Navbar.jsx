@@ -8,6 +8,7 @@ import ModalCart from "./ModalCart/ModalCart";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenuHidden } from "../../redux/userSlice/userSlice";
 import ModalUser from "./ModalUser/ModalUser";
+import { IoMdLogIn } from "react-icons/io";
 
 export const Navbar = () => {
   const [click, setClick] = useState(false);
@@ -53,9 +54,6 @@ export const Navbar = () => {
         <img src="img/Productos/logo.png" alt="Logo"></img>
       </div>
 
-      <div onClick={ChangeClick}>
-        <s.IconLogoMobile>{click ? <FaTimes /> : <FaBars />}</s.IconLogoMobile>
-      </div>
       <s.LinksContainerStyled click={click}>
         {Links.map((x) => (
           <Link key={x.name} to={x.href} onClick={x.onClick}>
@@ -68,13 +66,27 @@ export const Navbar = () => {
         <s.LinkStyled onClick={handleUserClick}>
           <motion.div whileTap={{ scale: 0.97 }}>
             {currentUser ? `${currentUser.nombre}` : "Inicia Sesión"}
+            <IoMdLogIn
+              style={{
+                color: "white",
+                textAlign:"center",
+              }}
+            />
           </motion.div>
         </s.LinkStyled>
+      </s.LinksContainerStyled>
 
+      <s.IconContainer>
         <s.CartNavStyled>
           <CartIcon />
         </s.CartNavStyled>
-      </s.LinksContainerStyled>
+
+        <div onClick={ChangeClick}>
+          <s.IconLogoMobile>
+            {click ? <FaTimes /> : <FaBars />}
+          </s.IconLogoMobile>
+        </div>
+      </s.IconContainer>
     </s.NavbarContainerStyled>
   );
 };

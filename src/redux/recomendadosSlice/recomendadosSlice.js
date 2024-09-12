@@ -3,7 +3,7 @@ import { pickRandom } from "./pickRandom.js";
 import { burgers } from "../../data/Menu.js";
 
 const INITIAL_STATE = {
-  recommended: pickRandom(burgers, 5),
+  recommended: pickRandom(burgers, 6),
 };
 
 export const recommendedSlice = createSlice({
