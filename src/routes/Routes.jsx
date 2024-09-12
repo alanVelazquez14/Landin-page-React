@@ -17,6 +17,7 @@ import Checkout from "../pages/CheckOut/Checkout.jsx";
 import MisOrdenes from "../pages/MisOrdenes/MisOrdenes.jsx";
 import Felicitaciones from "../pages/Felicitaciones/Felicitaciones.jsx";
 import ProtectedRoute from "../components/ProtectedRoute/ProtectedRoute.jsx";
+import ResumenProducto from "../pages/ResumenProducto/ResumenProducto.jsx";
 
 function Routes() {
   return (
@@ -32,6 +33,7 @@ function Routes() {
         <Route path="/login" element={<Login />} />
         <Route path="/mis-ordenes" element={<MisOrdenes />} />
         <Route path="/felicitaciones" element={<Felicitaciones />} />
+        <Route path="/resumenproducto/:id" element={<ResumenProducto />} />
 
         <Route
           path="/checkout"

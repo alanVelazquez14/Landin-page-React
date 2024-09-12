@@ -57,7 +57,7 @@ const CheckoutForm = ({ cartItems, price, shippingCost }) => {
               dispatch(clearCart());
             } catch (error) {
               console.log(error);
-              toast.error("Error al crear la order");
+              toast.error("Error al crear la orden");
             }
           }}
         >

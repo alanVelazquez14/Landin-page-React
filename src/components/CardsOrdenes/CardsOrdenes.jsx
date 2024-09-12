@@ -7,7 +7,7 @@ import {
 import { PiClockBold } from "react-icons/pi";
 
 const CardsOrdenes = () => {
-  
+
   return (
     <CardsOrdenesContainerStyled>
       <CardsInfoStyled>

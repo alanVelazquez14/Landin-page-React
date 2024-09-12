@@ -25,7 +25,6 @@ const Products = () => {
   const filteredBurgers = selectedCategory
     ? burgers.filter((burgers) => burgers.categoria === selectedCategory)
     : burgers;
-
   return (
     <ProductsContainerStyled>
       <TitleProductsStyled>
