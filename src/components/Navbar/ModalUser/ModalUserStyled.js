@@ -26,6 +26,18 @@ export const ModalContainerStyled = styled(motion.div)`
       opacity: 50%;
     }
   }
+
+  @media (max-width: 1000px) {
+    width: 350px;
+  }
+
+  @media (max-width: 550px) {
+    width: 300px;
+  }
+
+  @media (max-width: 425px) {
+    width: 200px;
+  }
 `;
 export const ModalOverlayStyled = styled(motion.div)`
   position: fixed;
