@@ -9,6 +9,7 @@ import {
 } from "./FormularioStyled";
 import * as Yup from "yup";
 import { toast } from "sonner";
+import emailjs from "emailjs-com";
 
 const Formulario = () => {
   const Inputs = [
@@ -58,6 +59,32 @@ const Formulario = () => {
     comentario: Yup.string().max(255, "Máximo de 255 caracteres").notRequired(),
   });
 
+  const sendEmail = (values) => {
+    const serviceID = "default_service";
+    const templateID = "template_1xewyns";
+    const userID = "5hPI17DL6NyCBEjgF";
+
+    const templateParams = {
+      from_name: values.name,
+      name: values.name,
+      apellido: values.apellido,
+      email: values.email,
+      telefono: values.telefono,
+      comentario: values.comentario,
+    };
+
+    emailjs.send(serviceID, templateID, templateParams, userID).then(
+      (response) => {
+        console.log(response.status, response.text);
+        toast.success("El formulario ha sido enviado correctamente!");
+      },
+      (error) => {
+        console.log(error);
+        toast.error("Hubo un error al enviar el formulario.");
+      }
+    );
+  };
+
   return (
     <Formik
       initialValues={{
@@ -69,8 +96,7 @@ const Formulario = () => {
       }}
       validationSchema={validationSchema}
       onSubmit={(values, { resetForm }) => {
-        console.log(values);
-        toast.success("El formulario ha sido enviado correctamente!");
+        sendEmail(values);
         resetForm();
       }}
     >
