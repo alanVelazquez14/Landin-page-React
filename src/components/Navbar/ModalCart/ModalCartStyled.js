@@ -18,7 +18,10 @@ export const ContainerStyled = styled(motion.div)`
   border-radius: 0 0 0 8px;
   box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.3);
 
-
+  @media (max-width: 470px) {
+    width: 350px;
+    height: 95vh;
+  }
   @media (max-width: 400px) {
     width: 350px;
     height: 97vh;
@@ -60,9 +63,13 @@ export const TitleStyled = styled.div`
   justify-content: space-between;
   align-items: center;
 
+  @media (max-width: 470px) {
+    font-size: 13px;
+  }
+
   @media (max-width: 400px) {
-    h1{
-      font-size: 15px;
+    h1 {
+      font-size: 13px;
     }
   }
 `;
@@ -91,7 +98,7 @@ export const ProductsWrapperStyled = styled.div`
   }
 
   @media (max-width: 400px) {
-    p{
+    p {
       font-size: 12px;
     }
   }
@@ -119,7 +126,7 @@ export const ProductContainerStyled = styled.div`
     width: 250px;
     height: 200px;
     flex-direction: column;
-    img{
+    img {
       width: 150px;
       height: 80px;
     }
@@ -140,7 +147,6 @@ export const TextContainerStyled = styled.div`
     width: 100%;
     text-align: center;
   }
-
 `;
 
 export const CardTitleStyled = styled.div`
@@ -159,7 +165,6 @@ export const DescStyled = styled.div`
     width: 100%;
     font-size: 8px;
   }
-
 `;
 
 export const PriceStyled = styled.div`
@@ -169,8 +174,6 @@ export const PriceStyled = styled.div`
 export const QuantityContainerStyled = styled.div`
   display: flex;
   align-items: center;
-
-
 `;
 
 export const InfoPrecioContainerStyled = styled.div`
@@ -182,6 +185,12 @@ export const InfoPrecioContainerStyled = styled.div`
   span {
     border: 1px solid white;
   }
+
+  @media (max-width: 470px) {
+    font-size: 15px;
+    width: 90%;
+  }
+  
   @media (max-width: 400px) {
     width: 90%;
   }
@@ -196,7 +205,6 @@ export const SubtotalContainer = styled.div`
   }
 `;
 
-
 export const EnvioContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -205,7 +213,6 @@ export const EnvioContainer = styled.div`
     font-size: 15px;
   }
 `;
-
 
 export const TotalContainer = styled.div`
   display: flex;
@@ -242,6 +249,10 @@ export const ButtonStyled = styled.button`
     opacity: 0.5;
   }
 
+  @media (max-width: 470px) {
+    font-size: 15px;
+    width: 90%;
+  }
   @media (max-width: 400px) {
     font-size: 15px;
     width: 90%;

@@ -20,8 +20,13 @@ export const IncreaseStyled = styled(motion.button)`
   }
 
   @media (max-width: 570px) {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
+  }
+
+  @media (max-width: 470px) {
+    width: 30px;
+    height: 30px;
   }
 
   @media (max-width: 390px) {
