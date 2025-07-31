@@ -1,0 +1,64 @@
+import { createSlice } from "@reduxjs/toolkit";
+import {
+  addItemToCart,
+  removeItemFromCart,
+  resetShippingCost,
+} from "./cartUtils";
+
+const INITIAL_STATE = {
+  cartItems: [],
+  shippingCost: 0,
+  hidden: true,
+};
+
+const cartSlice = createSlice({
+  name: "cart",
+  initialState: INITIAL_STATE,
+  reducers: {
+    addToCart: (state, action) => {
+      console.log("Producto que se agrega al carrito:", action.payload);
+      return {
+        ...state,
+        cartItems: addItemToCart(state.cartItems, action.payload),
+        shippingCost: 500,
+      };
+    },
+    removeFromCart: (state, action) => {
+      return {
+        ...state,
+        cartItems: removeItemFromCart(state.cartItems, action.payload),
+        shippingCost: resetShippingCost(state.cartItems, 500),
+      };
+    },
+    clearCart: (state) => {
+      return {
+        ...state,
+        cartItems: [],
+        shippingCost: 0,
+      };
+    },
+    toggleHiddenCart: (state) => {
+      return {
+        ...state,
+        hidden: !state.hidden,
+      };
+    },
+    setCartItems: (state, action) => {
+      return {
+        ...state,
+        cartItems: action.payload,
+        shippingCost: action.payload.length > 0 ? 500 : 0,
+      };
+    },
+  },
+});
+
+export const {
+  addToCart,
+  removeFromCart,
+  clearCart,
+  toggleHiddenCart,
+  setCartItems,
+} = cartSlice.actions;
+
+export default cartSlice.reducer;
