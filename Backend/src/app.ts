@@ -1,11 +1,11 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import productRoutes from "./src/routes/product.routes";
-import contactRoutes from "./src/routes/contact.routes";
-import cartRoutes from "./src/routes/cart.routes";
-import authRoutes from "./src/routes/auth.routes";
-import ordersRoutes from "./src/routes/orders.routes";
+import productRoutes from "./routes/product.routes";
+import contactRoutes from "./routes/contact.routes";
+import cartRoutes from "./routes/cart.routes";
+import authRoutes from "./routes/auth.routes";
+import ordersRoutes from "./routes/orders.routes";
 import cors from "cors";
 
 dotenv.config();
