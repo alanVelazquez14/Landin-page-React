@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import { Product } from "./src/models/product.model";
+import { Product } from "./models/product.model";
 import { burgers } from "./data/Menu";
 
 dotenv.config();
