@@ -9,13 +9,21 @@ Home Burger Bar es una aplicación web desarrollada con un stack MERN, enfocada 
 ✨ Características principales
 
 🖥️ Frontend en React con componentes reutilizables.
+
 🎨 Styled Components para estilos dinámicos y escalables.
+
 🔄 Redux para manejo global del estado (reservas, menú, carrito si existiera).
+
 🌐 Backend con Node.js + Express para manejar reservas, menús y endpoints.
+
 🗄️ Base de datos MongoDB para almacenar información del restaurante.
+
 📅 Formulario de reservas totalmente funcional.
+
 📱 Diseño responsive para móviles y escritorio.
+
 ⚡ UX moderna inspirada en hamburgueserías urbanas.
+
 
 🛠️ Tecnologías utilizadas
 
